@@ -1,0 +1,49 @@
+interface iAnimal{
+   public String getAnimalType();
+   public int getIdTag();
+   public void setIdTag(int anIdTag);
+   public int getMinTemperature();
+   public int getMaxTemperature();
+}
+
+class Elephant implements iAnimal{
+
+  String animalType;
+  int IdTag;
+  int minTemperature;
+  int maxTemperature;
+
+  Elephant(){
+    minTemperature= 35;
+    maxTemperature= 38;
+    animalType= this.getClass().getName();
+    }
+    public String getAnimalType(){
+       return animalType; 
+    }
+    public int getIdTag(){
+        return IdTag;
+    }
+    public void setIdTag(int anIdTag){
+        IdTag=anIdTag;
+    }
+    public int getMinTemperature(){
+        return minTemperature;
+    }
+    public int getMaxTemperature(){
+        return maxTemperature;
+    }
+}
+
+class Main {
+  public static void main(String[] args){
+    Elephant e=new Elephant();
+    e.setIdTag(99);
+    System.out.println("Animal Details: ");
+    System.out.println("Animal Type         : " + e.getAnimalType());
+    System.out.println("Animal ID           : " + e.getIdTag());
+    System.out.println("Minimum Temperature : " + e.getMinTemperature());
+    System.out.println("Maximum Temperature : " + e.getMaxTemperature());
+  }
+}
+
